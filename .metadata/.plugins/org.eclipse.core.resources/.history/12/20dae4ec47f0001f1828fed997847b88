@@ -1,0 +1,40 @@
+package toyPoordle.API.movies_api.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/movies")
+public class MovieController {
+
+	private static final List<Movie> movieList = new ArrayList<>();
+
+	// データの初期化（サンプル映画データ）
+	static {
+		movieList.add(new Movie("Inception", 2010, "Sci-Fi"));
+		movieList.add(new Movie("The Dark Knight", 2008, "Action"));
+		movieList.add(new Movie("Interstellar", 2014, "Sci-Fi"));
+	}
+
+	// 全映画情報を取得する
+	@GetMapping
+	public List<Movie> getAllMovies() {
+		return movieList;
+	}
+
+	// タイトルで映画を検索
+	@GetMapping("/{title}")
+	public Movie getMovieByTitle(@PathVariable String title) {
+		return movieList.stream()
+				.filter(movie -> movie.getTitle().equalsIgnoreCase(title))
+				.findFirst()
+				.orElse(null);
+	}
+
+	// 新しい映画を追加
+	@PostMapping
+	public Movie addMovie(@RequestBody Movie movie) {
+		movieList.add(movie);
+		return movie;
+	}
+}

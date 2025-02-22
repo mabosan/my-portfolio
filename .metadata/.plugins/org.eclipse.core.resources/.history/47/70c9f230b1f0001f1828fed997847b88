@@ -1,0 +1,12 @@
+package MinoBlock;
+
+import java.awt.Color;
+
+import Mino.Mino;
+
+public class Mino1 extends Mino{
+
+	public Mino1() {
+		create(Color.orange);
+	}
+}

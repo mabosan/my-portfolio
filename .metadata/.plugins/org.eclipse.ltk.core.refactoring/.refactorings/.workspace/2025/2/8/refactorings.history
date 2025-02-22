@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="3 個のリソースを削除" deleteContents="false" description="3 個のリソースを削除" element1="/First2DGame-core" element2="/First2DGame-lwjgl3" element3="/First2DGame-parent" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1740137273657"/>
+</session>

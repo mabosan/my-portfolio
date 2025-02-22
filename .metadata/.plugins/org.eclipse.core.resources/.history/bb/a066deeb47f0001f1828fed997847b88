@@ -1,0 +1,5 @@
+package toyPoordle.API.movies_api.model;
+
+public class Movie {
+
+}
